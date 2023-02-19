@@ -3,7 +3,7 @@ import { GoogleLogin } from '@react-oauth/google'
 import jwt_decode from "jwt-decode";
 import {useNavigate, Link} from 'react-router-dom'
 import shareVideo from '../assets/share.mp4'
-import logo from '../assets/logowhite.png'
+import logo from '../assets/images/logowhite.png'
 import {USERS} from '../shared/users'
 
 const Login = () => {
@@ -65,7 +65,7 @@ const Login = () => {
                     <Link
                         to="/"
                     >
-                        <img src={logo} width="150px" alt='logo' className='my-10'/>
+                        <img src={logo} width="150px" alt='logo' className='mt-10 mb-6'/>
                     </Link>
                     
                     <input
@@ -84,7 +84,7 @@ const Login = () => {
                     />
                     <button
                         type='button'
-                        className='bg-green-500 text-white px-6 py-2 rounded-md font-semibold text-base outline-none w-full hover:bg-green-600 hover:border-slate-200 border-green-500 border-2 block'
+                        className='bg-green-500 text-white px-6 py-2 rounded-md font-semibold text-base outline-none w-full hover:bg-green-600 hover:border-green-600 border-green-500 border-2 block'
                         onClick={login}
                     >
                         Login
@@ -109,7 +109,7 @@ const Login = () => {
                         
                         <Link
                             to="/register"
-                            className='text-blue-500'
+                            className='text-green-500'
                         >
                             <span> Sign up</span>
                         </Link>
