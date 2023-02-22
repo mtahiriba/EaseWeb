@@ -1,38 +1,22 @@
 import React from 'react'
 import logo from '../assets/images/logo.png'
 import { Link, useNavigate } from 'react-router-dom'
-import DropDownUserProfile from './DropDownUserProfile'
 
-function Navbar() {
 
-  const user = localStorage.getItem('user') !== 'undefined' ? JSON.parse(localStorage.getItem('user')) : localStorage.clear()
-  const navigate = useNavigate();
+const HomeNavbar = () => {
 
-  const join = () => {
-    navigate('/register', {replace: true})
-  }
+    const user = localStorage.getItem('user') !== 'undefined' ? JSON.parse(localStorage.getItem('user')) : localStorage.clear()
+    const navigate = useNavigate();
 
-  // const logout = () => {
-  //   localStorage.clear()
-  //   navigate('/', {replace: true})
-  // }
+    const join = () => {
+        navigate('/register', {replace: true})
+    }
 
   return (
     <nav className="bg-gray-50 shadow-lg md:px-20 px-5 py-3">
         <div className="flex flex-wrap items-center justify-between">
             <img src={logo} width="130px" alt='logo' className=''/>
-            {user ? (
-              <div className='flex flex-row justify-center items-center gap-4'>
-                <Link
-                  to="/"
-                  className='hidden md:block text-green-500 font-bold text-md hover:text-green-500'
-                >
-                  <span>Switch to Development</span>
-                </Link>
-                <DropDownUserProfile user={user}/>
-              </div>
-              
-            ): (
+            {!user && (
               <div className='flex items-center gap-4'>
                 <Link
                   to="/login"
@@ -56,11 +40,10 @@ function Navbar() {
                   <span>Join</span>
                 </Link>
               </div>
-              
             )}
         </div>
     </nav>
   )
 }
 
-export default Navbar
+export default HomeNavbar

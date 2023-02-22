@@ -1,10 +1,10 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
+import HomeNavbar from './HomeNavbar'
 
 const Header = () => {
   return (
     <div className='flex flex-col'>
-        <Navbar />
+        <HomeNavbar/> 
         <div className='flex justify-center items-center h-96'>
             <button
                 type='button'
