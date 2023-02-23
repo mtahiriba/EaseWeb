@@ -45,7 +45,7 @@ const DropDownUserProfile = ({ user, setUser, setOption}) => {
                         <span className='text-sm font-bold'>{user.name.length > 17 ? (user.name.slice(0,17)+'...').toUpperCase() : user.name.toUpperCase()}</span>
                     </Menu.Item>
                     <Menu.Item>
-                        <span className='text-sm font-bold'>{user.email.length > 23 ? (user.email.slice(0,23)+'...') : user.email}</span>
+                        <span className='text-sm font-bold'>{user.email.length > 23 ? (user.email.slice(0,18)+'...') : user.email}</span>
                     </Menu.Item>
                 </div>    
             </div>
