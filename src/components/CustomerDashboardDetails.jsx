@@ -12,7 +12,7 @@ const CustomerDashboardDetails = ({user}) => {
   return (
     <div>
         <div className='flex pt-5 gap-7 px-20'>
-          <div className='flex flex-col gap-7 w-1/2 '>
+          <div className='flex flex-col gap-5 w-1/2 '>
             <div className='w-full flex flex-col justify-center bg-white border rounded-md px-10 shadow-md h-40'>
                   <span className='font-bold text-3xl font-mono'>HELLO {(user.name).toUpperCase()}!</span>
                   <span className='text-sm font-sans'>It's good to see you again.</span>
@@ -71,7 +71,7 @@ const CustomerDashboardDetails = ({user}) => {
                 }}
                 className={`${activeButton === 'custom' ? activeBtnStyles : notActiveBtnStyles}`}
               >
-                Custom templates
+                Custom sections
               </button>  
             </div>
             <div className=' w-full flex h-96 '>

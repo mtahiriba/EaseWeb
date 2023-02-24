@@ -3,6 +3,8 @@ export const WEBSITES = [
         _id: '1',
         name: 'Google',
         picUrl: 'https://picsum.photos/1000/500',
+        category: 'header',
+        discription: 'discription',
     },
     {
         _id: '2',
