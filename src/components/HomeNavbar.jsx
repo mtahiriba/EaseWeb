@@ -30,7 +30,7 @@ const HomeNavbar = () => {
                   className='md:block hidden text-green-500 font-bold text-md hover:bg-green-500 hover:text-white border   w-20 h-10 rounded-md border-green-500'  
                   onClick={join}
                 >
-                  Join
+                  Sign up
                 </button>
 
                 <Link

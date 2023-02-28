@@ -71,28 +71,28 @@ function Register() {
                             <hr className='w-full h-px -mt-1 mb-5 border-0 rounded  bg-gray-300'/>
                         </div>
                         <input
-                            className='flex-1 border-gray-100 outline-none border-2 p-2 rounded-md hover:border-gray-300 w-full focus:border-blue-400'
+                            className='flex-1 border-gray-200 outline-none border-2 p-2 rounded-md hover:border-gray-400 w-full focus:border-blue-400'
                             type='text'
                             placeholder='Full Name'
                             value={name}
                             onChange={(e)=>setName(e.target.value)}
                         />
                         <input
-                            className='flex-1 border-gray-100 outline-none border-2 p-2 rounded-md hover:border-gray-300 w-full focus:border-blue-400'
+                            className='flex-1 border-gray-200 outline-none border-2 p-2 rounded-md hover:border-gray-400 w-full focus:border-blue-400'
                             type='email'
                             placeholder='Email'
                             value={email}
                             onChange={(e)=>setEmail(e.target.value)}
                         />
                         <input
-                            className='flex-1 border-gray-100 outline-none border-2 p-2 rounded-md hover:border-gray-300 w-full focus:border-blue-400'
+                            className='flex-1 border-gray-200 outline-none border-2 p-2 rounded-md hover:border-gray-400 w-full focus:border-blue-400'
                             type='Password'
                             placeholder='Create a password'
                             value={password}
                             onChange={(e)=>setPassword(e.target.value)}
                         />
                         <input
-                            className='flex-1 border-gray-100 outline-none border-2 p-2 rounded-md hover:border-gray-300 w-full focus:border-blue-400'
+                            className='flex-1 border-gray-200 outline-none border-2 p-2 rounded-md hover:border-gray-400 w-full focus:border-blue-400'
                             type='Password'
                             placeholder='Confirm password'
                             value={confirmPass}

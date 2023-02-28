@@ -1,7 +1,7 @@
 import React from 'react'
 import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
-import {Link, useNavigate } from 'react-router-dom'
+import {Link  } from 'react-router-dom'
 
 
 function classNames(...classes) {
@@ -10,8 +10,6 @@ function classNames(...classes) {
 
 const DropDownUserProfile = ({ user, setUser, setOption}) => {
 
-    const navigate = useNavigate();
-
     const logout = () => {
         localStorage.clear()
         setUser(null)
@@ -19,7 +17,7 @@ const DropDownUserProfile = ({ user, setUser, setOption}) => {
 
   return (
     <Menu as="div" className="relative inline-block text-left">
-    <div>
+    <div> 
       <Menu.Button className="">
         <img src={user.picture} alt="profile" className='w-10 h-10 rounded-full hidden md:block'/>
       </Menu.Button>
@@ -45,19 +43,10 @@ const DropDownUserProfile = ({ user, setUser, setOption}) => {
                         <span className='text-sm font-bold'>{user.name.length > 17 ? (user.name.slice(0,17)+'...').toUpperCase() : user.name.toUpperCase()}</span>
                     </Menu.Item>
                     <Menu.Item>
-                        <span className='text-sm font-bold'>{user.email.length > 23 ? (user.email.slice(0,18)+'...') : user.email}</span>
+                        <span className='text-sm font-bold text-gray-600'>{user.email.length > 23 ? (user.email.slice(0,18)+'...') : user.email}</span>
                     </Menu.Item>
                 </div>    
             </div>
-            <Menu.Item>
-                <button
-                    type='button'
-                    className='md:block text-neutral-700 font-bold text-sm hover:bg-neutral-700 hover:text-white border h-10 rounded-md border-neutral-700'  
-                    // onClick={Register}
-                >
-                    Switch to Development
-                </button>
-            </Menu.Item>
         </div>
         
         
