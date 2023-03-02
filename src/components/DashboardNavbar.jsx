@@ -16,18 +16,18 @@ function DashboardNavbar({setUser, setOption}) {
 
   return (
     <nav className="bg-white md:px-20 px-5 py-3 border-2">
-        <div className="flex flex-wrap items-center justify-between">
+        <div className="flex flex-wrap items-center md:justify-between justify-center">
             <Link
               to="/"
               onClick={() => setOption('dashboard')}
             >
-              <img src={logo} width="130px" alt='logo' className=''/>
+              <img src={logo} alt='logo' className='md:w-32 w-24'/>
             </Link>
             
             <div className='flex flex-row justify-center items-center gap-10'>
-              <Menu as="div" className="relative inline-block text-left">
+              <Menu as="div" className="relative inline-block text-left md:block hidden">
                 <Menu.Button type="button" className="relative inline-flex items-center p-1  text-center text-black ">
-                  <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"  className='h-7 w-7'>
+                  <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"  className='md:h-7 md:w-7'>
                     <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"></path>
                   </svg>
                   <div className="absolute inline-flex items-center justify-center w-2 h-2 text-xs font-bold text-white bg-red-500 border-white rounded-full top-px right-px dark:border-gray-900"></div>
