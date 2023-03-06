@@ -37,10 +37,10 @@ const CustomTemplatesDashboard = ({setSectionNum}) => {
   return (
     <div className='w-full'>
         <div className='flex justify-between mt-7 mx-2'>
-            <span className='flex items-center font-sans text-3xl text-gray-800 font-bold '>SECTIONS LIST</span>
+            <span className='flex items-center font-sans md:text-3xl text-gray-800 font-bold '>SECTIONS LIST</span>
             <button 
                 type='button'
-                className='bg-green-500 text-white px-7 py-2 rounded-md font-semibold text-base outline-none hover:bg-green-600 hover:border-green-600 border-green-500 border-2 block'
+                className='bg-green-500 text-white md:px-7 px-3 py-2 rounded-md font-semibold md:text-base text-xs outline-none hover:bg-green-600 hover:border-green-600 border-green-500 border-2 block'
                 onClick={handleCustomSection}
             >
                 Create New Section

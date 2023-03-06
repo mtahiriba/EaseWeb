@@ -17,8 +17,16 @@ function Register() {
     const responseGoogle = (response) => {
         var decoded = jwt_decode(response.credential);
         console.log(decoded)
+
+        const userObj = {
+            _id: decoded.sub,
+            email: decoded.email,
+            name: decoded.name,
+            password: '',
+            picture: decoded.picture,
+        }
         
-        localStorage.setItem('user', JSON.stringify(decoded))
+        localStorage.setItem('user', JSON.stringify(userObj))
         navigate('/', {replace: true})
     }
 
