@@ -7,7 +7,7 @@ const Notifications = () => {
             
                   <fieldset>
                     <legend className="sr-only">By Email</legend>
-                    <div className="text-sm font-semibold  " aria-hidden="true">
+                    <div className="text-sm font-bold  text-gray-500 " aria-hidden="true">
                       By Email
                     </div>
                     <div className="mt-4 space-y-4">
@@ -21,10 +21,10 @@ const Notifications = () => {
                           />
                         </div>
                         <div className="ml-3 text-sm">
-                          <label htmlFor="comments" className="font-medium text-gray-700">
+                          <label htmlFor="comments" className="font-medium text-gray-500">
                             Comments
                           </label>
-                          <p className="text-gray-500">Get notified when someones posts a comment on a posting.</p>
+                          <p className="text-gray-400">Get notified when someones posts a comment on a posting.</p>
                         </div>
                       </div>
                       <div className="flex items-start">
@@ -37,10 +37,10 @@ const Notifications = () => {
                           />
                         </div>
                         <div className="ml-3 text-sm">
-                          <label htmlFor="candidates" className="font-medium text-gray-700">
+                          <label htmlFor="candidates" className="font-medium text-gray-500">
                             Candidates
                           </label>
-                          <p className="text-gray-500">Get notified when a candidate applies for a job.</p>
+                          <p className="text-gray-400">Get notified when a candidate applies for a job.</p>
                         </div>
                       </div>
                       <div className="flex items-start">
@@ -53,17 +53,17 @@ const Notifications = () => {
                           />
                         </div>
                         <div className="ml-3 mb-7 text-sm">
-                          <label htmlFor="offers" className="font-medium text-gray-700">
+                          <label htmlFor="offers" className="font-medium text-gray-500">
                             Offers
                           </label>
-                          <p className="text-gray-500">Get notified when a candidate accepts or rejects an offer.</p>
+                          <p className="text-gray-400">Get notified when a candidate accepts or rejects an offer.</p>
                         </div>
                       </div>
                     </div>
                   </fieldset>
                   <fieldset>
-                    <legend className="contents text-sm font-semibold text-gray-900">Push Notifications</legend>
-                    <p className="text-sm text-gray-500">These are delivered via SMS to your mobile phone.</p>
+                    <legend className="contents text-sm font-bold text-gray-500">Push Notifications</legend>
+                    <p className="text-sm text-gray-400">These are delivered via SMS to your mobile phone.</p>
                     <div className="mt-4 space-y-4">
                       <div className="flex items-center">
                         <input
@@ -72,7 +72,7 @@ const Notifications = () => {
                           type="radio"
                           className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
                         />
-                        <label htmlFor="push-everything" className="ml-3 block text-sm font-medium text-gray-700">
+                        <label htmlFor="push-everything" className="ml-3 block text-sm font-medium text-gray-500">
                           Everything
                         </label>
                       </div>
@@ -83,7 +83,7 @@ const Notifications = () => {
                           type="radio"
                           className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
                         />
-                        <label htmlFor="push-email" className="ml-3 block text-sm font-medium text-gray-700">
+                        <label htmlFor="push-email" className="ml-3 block text-sm font-medium text-gray-500">
                           Same as email
                         </label>
                       </div>
@@ -94,7 +94,7 @@ const Notifications = () => {
                           type="radio"
                           className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500"
                         />
-                        <label htmlFor="push-nothing" className="ml-3 block text-sm font-medium text-gray-700">
+                        <label htmlFor="push-nothing" className="ml-3 block text-sm font-medium text-gray-500">
                           No push notifications
                         </label>
                       </div>

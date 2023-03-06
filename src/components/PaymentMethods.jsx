@@ -1,11 +1,14 @@
 
 
 import React, { useState } from 'react';
-import visaa from '../assets/images/paymentsimages/visaa.PNG'
-import ms from '../assets/images/paymentsimages/ms.PNG'
-import discover from '../assets/images/paymentsimages/discover.PNG'
-import americanExpress from '../assets/images/paymentsimages/americanExpress.PNG'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCcVisa, faCcMastercard, faCcDiscover, faCcAmex } from '@fortawesome/free-brands-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
 
+library.add(faCcVisa, faCcMastercard, faCcDiscover, faCcAmex);
+
+
+//Year TextField Method
 function Year(){
  
   // Set up a state variable to hold the selected year
@@ -25,10 +28,10 @@ function Year(){
 
   // Render the select element with options for each year
   return (
-    <div>
-      <label for="year" className="block mb-2 text-sm font-bold text-gray-400 dark:text-white">Year</label>
-      <select id="year" name="year" value={selectedYear} onChange={handleSelectChange} className="bg-gray-50 text-gray-900 text-sm  block w-full p-2.5 dark:bg-gray-700 border-gray-300 outline-none border-2 p-2 rounded-sm hover:border-gray-300  focus:border-green-500 ">
-        <option  className="block mb-2 text-sm font-bold text-gray-400 dark:text-white" value="">year</option>
+    <div >
+      <label for="year" className="block mb-2 text-sm font-bold text-gray-400 ">Year</label>
+      <select id="year" name="year" value={selectedYear} onChange={handleSelectChange} className="bg-gray-50 rounded-md text-gray-900 text-sm  block w-full p-2.5  border-gray-300 outline-none border-2 p-2 rounded-md hover:border-gray-300  focus:border-green-500 ">
+        <option  className="block mb-2 text-sm font-bold text-gray-400 " value="">year</option>
         {years.map((year) => (
           <option key={year} value={year}>
             {year}
@@ -40,6 +43,8 @@ function Year(){
 }
 
 
+
+//MonthTextfield
 function Month(){
  
   // Set up a state variable to hold the selected month
@@ -57,9 +62,9 @@ function Month(){
   // Render the select element with options for each year
   return (
     <div>
-      <label for="month" className="block mb-2 text-sm font-bold text-gray-400 dark:text-white">Month</label>
-      <select id="month" name="year" value={selectedMonth} onChange={handleSelectChange} className="bg-gray-50 text-gray-900 text-sm  block w-full p-2.5 dark:bg-gray-700 border-gray-300 outline-none border-2 p-2 rounded-sm hover:border-gray-300  focus:border-green-500 ">
-        <option  className="block mb-2 text-sm font-bold text-gray-400 dark:text-white" value="">Month</option>
+      <label htmlFor="month" className="block mb-2 text-sm font-bold text-gray-400 ">Month</label>
+      <select id="month" name="year" value={selectedMonth} onChange={handleSelectChange} className="bg-gray-50 text-gray-900 text-sm  block w-full p-2.5 border-gray-300 outline-none border-2 p-2 rounded-md hover:border-gray-300  focus:border-green-500 ">
+        <option  className="block mb-2 text-sm font-bold text-gray-400 " value="">Month</option>
         {month.map((month) => (
           <option key={month} value={month}>
             {month}
@@ -71,27 +76,24 @@ function Month(){
 }
 
 
-
+//showing radion button for type selection
 function PaymentMethodRadioGroup() {
   const paymentMethods = [
-    { id: 'visa', label: 'Visa', image: visaa },
-    { id: 'mastercard', label: 'Mastercard', image: ms },
-    { id: 'discover', label: 'Discover', image: discover },
-    { id: 'americanExpress', label: 'Discover', image: americanExpress },
+    { id: 'visa', label: 'Visa', icon:"cc-visa" },
+    { id: 'mastercard', label: 'Mastercard', icon: "cc-mastercard"},
+    { id: 'discover', label: 'Discover',icon:"cc-discover"},
+    { id: 'americanExpress', label: 'americanExpress', icon:"cc-amex"},
   ];
 
   return (
-    <div className="flex flex-row gap-3 items-center  ">
+    <div className="flex flex-row gap-3 items-center ">
       {paymentMethods.map((method) => (
         <>  
-            <input checked id={method.id} type="radio" value="" name="paymentMethod" className="w-4  ml-1text-blue-600 "/>
-            <label for={method.id} key={method.id} className="text-sm  font-medium text-gray-900 dark:text-gray-300">
-              <img
-                    src={method.image}
-                    alt={method.label}
-                    className="w-12 h-12 object-contain mb-2"
-                  />
-            </label>
+            <input  id={method.id} type="radio" value="" name="paymentMethod" className="w-4 ml-1 text-green-900 "/>
+
+            <label for={method.id} key={method.id} className="text-xl font-medium text-gray-900">
+            <FontAwesomeIcon icon={['fab', method.icon]} />
+           </label>
         </>
       ))}
 
@@ -102,24 +104,24 @@ function PaymentMethodRadioGroup() {
 const PaymentMethods = () => {
     return (
       <div className='flex flex-col m-10 h-100'>
-          <div className="border-b-2  py-2 block mb-4 text-sm font-bold text-gray-500 dark:text-white ">
+          <div className="border-b-2  py-2 block mb-4 text-sm font-bold text-gray-500 ">
             PAYMENT DETAILS
           </div>
 
-          <div className="flex flex-col gap-2 text-sm font-lg font-medium text-gray-400 dark:text-white mb-6  ">
-              <p className="text-sm font-lg font-bold text-gray-500 dark:text-white mb-5"> Credit Card Information</p>
+          <div className="flex flex-col gap-2 text-sm font-lg font-medium text-gray-400  mb-6  ">
+              <p className="text-sm font-lg font-bold text-gray-500 mb-5"> Credit Card Information</p>
               <p>SELECT CARD TYPE</p>
               <PaymentMethodRadioGroup />
           </div>
 
           <div className="flex gap-4">
               <div className="w-1/2 mb-6">
-                <label className="block mb-2 text-sm font-bold text-gray-400 dark:text-white " for="cardName">Name on Card</label>
-                <input  className="bg-gray-50 text-gray-900 text-sm  block w-full p-2.5 dark:bg-gray-700 border-gray-300 outline-none border-2 p-2 rounded-sm hover:border-gray-300  focus:border-green-500 " type="text" id="cardName" name="cardName" required />
+                <label className="block mb-2 text-sm font-bold text-gray-400  " htmlFor="cardName">Name on Card</label>
+                <input  className="bg-gray-50 text-gray-900 text-sm  block w-full p-2.5  border-gray-300 outline-none border-2 p-2 rounded-md hover:border-gray-300  focus:border-green-500 " type="text" id="cardName" name="cardName" required />
               </div>
               <div className="w-1/2 mb-6">
-                <label className="block mb-2 text-sm font-bold text-gray-400 dark:text-white" for="cardNumber">Card Number</label>
-                <input  className="bg-gray-50 text-gray-900 text-sm  block w-full p-2.5 dark:bg-gray-700 border-gray-300 outline-none border-2 p-2 rounded-sm hover:border-gray-300  focus:border-green-500 " type="text" id="cardNumber" name="cardNumber"  required/>
+                <label className="block mb-2 text-sm font-bold text-gray-400 " htmlFor="cardNumber">Card Number</label>
+                <input  className="bg-gray-50 text-gray-900 text-sm  block w-full p-2.5  border-gray-300 outline-none border-2 p-2 rounded-md hover:border-gray-300  focus:border-green-500 " type="text" id="cardNumber" name="cardNumber"  required/>
               </div>
           </div>
 
@@ -127,12 +129,12 @@ const PaymentMethods = () => {
           <div className="flex gap-4 mb-10">
               
               <div className="w-2/4 mb-6">
-                <label className="block mb-2 text-sm font-bold text-gray-400 dark:text-white" for="CSV">CSV</label>
-                <input  className="bg-gray-50 text-gray-900 text-sm  block w-full p-2.5 dark:bg-gray-700 border-gray-300 outline-none border-2 p-2 rounded-sm hover:border-gray-300  focus:border-green-500 " type="text" id="CSV" name="CSV"  required/>
+                <label className="block mb-2 text-sm font-bold text-gray-400 " htmlFor="CSV">CSV</label>
+                <input  className="bg-gray-50 text-gray-900 text-sm  block w-full p-2.5  border-gray-300 outline-none border-2 p-2 rounded-md hover:border-gray-300  focus:border-green-500 " type="text" id="CSV" name="CSV"  required/>
               </div>
 
               <div className="w-1/4 mb-6">
-                <Month/>
+                <Month className="rounded-md"/>
               </div>
 
               <div className="w-1/4 mb-6">
@@ -143,7 +145,7 @@ const PaymentMethods = () => {
 
           </div>
 
-          <div className='flex justify-center mb-4'>
+          <div className='flex justify-end mb-6'>
               <button type='button' className='bg-green-500 text-white px-10 py-3 rounded-sm text-lg font-medium text-sm outline-none  hover:bg-green-600 hover:border-green-600 border-green-500 border-2 block'>
                 Submit Payment
               </button>
